@@ -16,7 +16,7 @@ else
 	counter=0
 	cat users | while read usr; 
 	do
-    		sudo useradd $usr
+    		sudo adduser --disabled-password --gecos "" $usr
     		echo -e "${pass[$counter]}\n${pass[$counter]}" | sudo passwd -q $usr
 		counter=$(($counter+1))
 	done
